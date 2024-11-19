@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
-from shutil import copyfile
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
@@ -48,9 +48,6 @@ def show_uploads():
     # Renderizar la plantilla uploads.html
     return render_template('uploads.html', images=image_urls)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 @app.route('/contact', methods=['POST'])
 def contact():
