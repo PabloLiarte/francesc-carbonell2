@@ -156,63 +156,64 @@
         }
 
         /* Estilos para pantallas pequeñas */
-      @media (max-width: 768px) {
-        body {
-         padding: 10px;
-        }
-         header {
-         flex-direction: column;
-         text-align: center;
-        }
-         header img {
-         margin: 0 auto;
-        }
-        header .phone {
-         margin-top: 10px;
-        }
-         .container {
-         padding: 0 10px;
-        }
-         .gallery {
-         flex-direction: column;
-         gap: 10px;
-        }
-         .features-grid {
-         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-        }
-         .carousel img {
-         max-width: 90%; /* Asegura que las imágenes se ajusten a la pantalla */
-        }
-         .description-form-container {
-         flex-direction: column;
-        }
-         .description, .contact-container {
-         width: 100%; /* Ocupa todo el ancho en móviles */
-        }
-     }   
+         @media (max-width: 768px) {
+             body {
+             padding: 10px;
+            }
+              header {
+              flex-direction: column;
+             text-align: center;
+            }
+             header img {
+             margin: 0 auto;
+            }
+             header .phone {
+             margin-top: 10px;
+            }
+             .container {
+             padding: 0 10px;
+            }
+             .gallery {
+             flex-direction: column;
+             gap: 10px;
+            }
+             .features-grid {
+             grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+            }
+             .carousel img {
+             max-width: 90%; /* Asegura que las imágenes se ajusten a la pantalla */
+            }
+             .description-form-container {
+             flex-direction: column;
+            }
+             .description, .contact-container {
+             width: 100%; /* Ocupa todo el ancho en móviles */
+            }
+        }   
+
          /* Estilos para el carrusel */
          .carousel .prev, .carousel .next {
-         position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-            border-radius: 50%;
-            user-select: none;
+             position: absolute;
+             top: 50%;
+             transform: translateY(-50%);
+             font-size: 2rem;
+             color: white;
+             background: rgba(0, 0, 0, 0.5);
+             border: none;
+             cursor: pointer;
+             padding: 10px;
+             z-index: 1001;
+             border-radius: 50%;
+             user-select: none;
         }
-        .carousel .prev {
-            left: 20px;
+         .carousel .prev {
+             left: 20px;
         }
-        .carousel .next {
-            right: 20px;
+         .carousel .next {
+             right: 20px;
         }
-        .carousel .prev:hover, .carousel .next:hover {
-            background: rgba(0, 0, 0, 0.8);
+         .carousel .prev:hover, .carousel .next:hover {
+             background: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
