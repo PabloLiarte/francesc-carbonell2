@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, send_from_directory
 import os
 from werkzeug.utils import secure_filename
+
 
 app = Flask(__name__)
 
@@ -10,6 +11,11 @@ os.makedirs(STATIC_UPLOAD_FOLDER, exist_ok=True)
 
 app.config['STATIC_UPLOAD_FOLDER'] = STATIC_UPLOAD_FOLDER
 app.secret_key = 'your_secret_key'  # Cambia esto por una clave segura
+
+# Ruta para servir archivos estáticos
+@app.route('/static/<path:path>')
+def static_files(path):
+    return send_from_directory('static', path)
 
 @app.route('/')
 def index():
