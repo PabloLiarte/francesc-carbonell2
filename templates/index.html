@@ -99,6 +99,16 @@
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
+        .features-grid {
+          display: grid;
+         grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+         grid-auto-rows: minmax(50px, auto); /* Asegura que las filas sean de igual altura */
+         gap: 10px; /* Espaciado entre filas y columnas */
+         font-size: 1rem;
+         color: #000000;
+         padding: 0;
+         list-style: none;
+         }
         .contact-container {
             flex: 3;
             padding: 1rem;
@@ -113,7 +123,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #182039;
-            text-align: left;
+            text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 10px;
             border-radius: 8px;
@@ -143,6 +153,66 @@
             font-weight: bold;
             border: none;
             cursor: pointer;
+        }
+
+        /* Estilos para pantallas pequeñas */
+      @media (max-width: 768px) {
+        body {
+         padding: 10px;
+        }
+         header {
+         flex-direction: column;
+         text-align: center;
+        }
+         header img {
+         margin: 0 auto;
+        }
+        header .phone {
+         margin-top: 10px;
+        }
+         .container {
+         padding: 0 10px;
+        }
+         .gallery {
+         flex-direction: column;
+         gap: 10px;
+        }
+         .features-grid {
+         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        }
+         .carousel img {
+         max-width: 90%; /* Asegura que las imágenes se ajusten a la pantalla */
+        }
+         .description-form-container {
+         flex-direction: column;
+        }
+         .description, .contact-container {
+         width: 100%; /* Ocupa todo el ancho en móviles */
+        }
+     }   
+         /* Estilos para el carrusel */
+         .carousel .prev, .carousel .next {
+         position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .carousel .prev {
+            left: 20px;
+        }
+        .carousel .next {
+            right: 20px;
+        }
+        .carousel .prev:hover, .carousel .next:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
@@ -204,13 +274,15 @@
                 <!-- Características principales -->
                 <div class="features">
                     <h2>Características principales</h2>
-                    <ul>
-                        <li>Superficie: 212m²</li>
-                        <li>Habitaciones: 5</li>
-                        <li>Baños: 2</li>
-                        <li>Aseo: 1</li>
-                        <li>Ubicación: Madrid, España</li>
-                    </ul>
+                     <div class="features-grid"></div>
+                      <div>Superficie: 212 m²</div>
+                      <div>5 Habitaciones</div>
+                      <div>2 Baños</div>
+                      <div>1 Aseo</div>
+                      <div>Planta: 3º Exterior</div>
+                      <div>Orientación: Norte</div>
+                      <div>Calefacción: Gasóleo</div>
+                      <div>Construido en 1947</div>
                 </div>
             </div>
             <!-- Bloque de contacto con precio y formulario -->
@@ -290,6 +362,18 @@
                 carouselImage.src = images[currentImageIndex];
             }
         });
+
+         function nextImage() {
+         currentImageIndex = (currentImageIndex + 1) % images.length;
+          const carouselImage = document.getElementById('carouselImage');
+         carouselImage.src = images[currentImageIndex];
+        }
+
+         function prevImage() {
+         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+         const carouselImage = document.getElementById('carouselImage');
+        carouselImage.src = images[currentImageIndex];
+         }
     </script>
 </body>
 </html>
