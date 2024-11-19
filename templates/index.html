@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuncio del Piso</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #FFFFFF; }
+        header {
+            background: #FFFFFF;
+            color: #000000;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #CCC;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        header img {
+            max-height: 40px;
+            margin-left: 20%;
+        }
+        header .phone {
+            font-size: 1.2rem;
+            color: #182039;
+            font-weight: bold;
+            margin-right: 20%;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        .section {
+            background-color: #FFFFFF;
+            margin-bottom: 0;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        h2 {
+            color: #182039;
+            text-align: center;
+        }
+        .carousel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .carousel img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .carousel .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .description-form-container {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .description {
+            flex: 7;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .features {
+            margin-top: 20px;
+            padding: 1rem;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .contact-container {
+            flex: 3;
+            padding: 1rem;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 20px;
+        }
+        .price-details {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #182039;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .price-details span {
+            display: block;
+            color: #000000;
+            font-size: 1rem;
+        }
+        .form {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            background-color: #FFFFFF;
+        }
+        .form input, .form textarea, .form button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form button {
+            background-color: #182039;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/static/uploads/logo-pisos-en-el-barrio.jpg" alt="Logo Empresa">
+        <span class="phone">91 323 75 07</span>
+    </header>
+
+    <div class="container">
+        <!-- Título del piso -->
+        <div class="section title" style="text-align: left; width: 150%; margin: 5px 5px; padding-left: 5%;">
+            <h1 style="font-size: 33px; font-family: 'Inter', sans-serif; color: #222222;">Piso en venta en la calle Reina Cristina, Pacífico</h1>
+        </div>
+        <!-- Galería -->
+        <div class="section gallery" style="width: 100%; max-width: 1600px; margin: 20px auto; display: flex; gap: 20px;">
+            <div style="flex: 1;">
+                <img src="/static/uploads/portada.jpg" alt="Portada" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(0)">
+            </div>
+            <div style="flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <img src="/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(2).jpg" alt="Galería 1" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(1)">
+                <img src="/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(3).jpg" alt="Galería 2" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(2)">
+                <img src="/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(4).jpg" alt="Galería 3" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(3)">
+                <img src="/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(5).jpg" alt="Galería 4" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(4)">
+            </div>
+        </div>
+
+        <!-- Nueva sección de descripción, características y formulario -->
+        <div class="description-form-container">
+            <!-- Descripción -->
+            <div class="description">
+                <h2>Descripción</h2>
+                <p>Este piso es ideal para... (aquí puedes describir las ventajas, ubicación, y detalles que quieras destacar).</p>
+                <p><strong>¿Por qué elegir este piso?</strong><br>
+                Zonas comunes: existen pocas comunidades en Pedralbes tan cercanas al centro de Barcelona con este nivel de instalaciones y servicios y metros cuadrados de jardines, lo que lo convierte en lugar de residencia ideal para todo el año.<br>
+                Ubicación: el piso se encuentra en la tranquila calle Francesc Carbonell, en pleno barrio de Pedralbes, una zona en proyección muy cerca del centro que garantiza una inversión segura, y que cuenta además con todos los servicios a mano.<br><br>
+                Quisque gravida, purus vitae venenatis dapibus, purus justo aliquam<br>
+                Etiam venenatis, sem vitae ultrices varius, eros neque sagittis lectus, a suscipit diam sapien et ante. Sed malesuada arcu sit amet velit fermentum volutpat.<br><br>
+                Nulla ultricies sed magna a sodales. Sed ornare mauris a dictum convallis. Pellentesque pretium purus quis eleifend auctor. Maecenas at nulla eleifend nulla fermentum tempor in id eros.<br><br>
+                Nulla egestas enim ut eros tincidunt:
+                <ul>
+                    <li>Sed fermentum ipsum ornare. Ut nec velit velit.</li>
+                    <li>Curabitur mattis nisi risus, eu elementum ipsum interdum id.</li>
+                    <li>Duis fermentum consectetur ipsum id gravida. Pellentesque aliquet sagittis malesuada.</li>
+                    <li>Quisque vitae nibh eleifend, tristique quam ut, feugiat quam.</li>
+                    <li>Quisque mollis laoreet risus eget sollicitudin.</li>
+                </ul>
+                Etiam ut lectus leo. Curabitur venenatis nunc ut luctus lacinia. Nam aliquet sapien eu dui fermentum facilisis. Ut dignissim feugiat felis at aliquam. Nullam malesuada lacus pulvinar vulputate efficitur.<br><br>
+                Donec sagittis, augue eget vehicula dapibus, metus quam rhoncus dolor, non iaculis augue justo eu lorem. Mauris congue at orci a consectetur.<br><br>
+                Sed feugiat eros sit amet leo accumsan pretium. Praesent viverra risus quis lacus semper posuere. Proin leo ipsum, dictum ut porta id, vestibulum nec quam. Pellentesque luctus ac dolor vel accumsan. Phasellus sodales ut diam ac laoreet. Phasellus nec fringilla elit. Ut semper sagittis quam, ut sagittis lorem dignissim sed.<br><br>
+                Cras felis eros, tincidunt vel ultricies vel, euismod a metus. In hac habitasse platea dictumst. Fusce nec turpis vel nisl maximus dictum sed nec ligula. In hac habitasse platea dictumst. Nullam sit amet lectus sem.<br><br>
+                Quisque luctus, urna eget finibus convallis, mi ex tristique metus, eget ultrices massa arcu non lectus.<br><br>
+                Phasellus varius urna vitae ex venenatis blandit. Donec pulvinar convallis dignissim. Pellentesque sed leo id diam ultrices semper porta in ante. In hac habitasse platea dictumst. Proin nec libero non ligula faucibus dictum. Morbi vel enim odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis scelerisque nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+                <!-- Características principales -->
+                <div class="features">
+                    <h2>Características principales</h2>
+                    <ul>
+                        <li>Superficie: 100m²</li>
+                        <li>Habitaciones: 3</li>
+                        <li>Baños: 2</li>
+                        <li>Ubicación: Madrid, España</li>
+                        <li>Precio: 300,000 €</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bloque de contacto con precio y formulario -->
+            <div class="contact-container">
+                <div class="price-details">
+                    500.000 €<br>
+                    <span>120 m²</span>
+                    <span>3 habitaciones</span>
+                    <span>2 baños</span>
+                </div>
+                <div class="form">
+                    <h2>Contáctanos</h2>
+                    <form action="/contact" method="post">
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                        <input type="text" name="phone" placeholder="Tu teléfono" required>
+                        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                        <textarea name="message" rows="4" placeholder="Tu mensaje" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  <!-- Contenedor del carrusel -->
+<div id="carousel" class="carousel">
+    <span class="close" onclick="closeCarousel()">&times;</span>
+    <img id="carouselImage" src="" alt="Imagen del carrusel">
+</div>
+  
+    <script>
+        const images = [
+            "/static/uploads/portada.jpg", 
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(2).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(3).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(4).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(5).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(6).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(7).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(8).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(9).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(10).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(11).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(12).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(13).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(14).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(14)%20(1).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(15).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(16).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46%20(17).jpg",
+            "/static/uploads/WhatsApp%20Image%202024-11-18%20at%2012.36.46.jpg"
+        ];
+
+        let currentImageIndex = 0;
+
+function openCarousel(index) {
+    currentImageIndex = index;
+    const carousel = document.getElementById('carousel');
+    const carouselImage = document.getElementById('carouselImage');
+    carouselImage.src = images[currentImageIndex];
+    carousel.style.display = 'flex';
+}
+
+function closeCarousel() {
+    const carousel = document.getElementById('carousel');
+    carousel.style.display = 'none';
+}
+
+document.addEventListener('keydown', function(event) {
+    const carousel = document.getElementById('carousel');
+    if (carousel.style.display === 'flex') {
+        if (event.key === 'ArrowRight') {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        } else if (event.key === 'ArrowLeft') {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        } else if (event.key === 'Escape') {
+            closeCarousel();
+            return;
+        }
+        const carouselImage = document.getElementById('carouselImage');
+        carouselImage.src = images[currentImageIndex];
+    }
+});
+</script>
+</body>
+</html>

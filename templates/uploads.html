@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes Subidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FAF2EC;
+            padding: 20px;
+        }
+        h1 {
+            color: #5F7EE3;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 200px;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .gallery img:hover {
+            border-color: #5F7EE3;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #5F7EE3;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FF8B38;
+        }
+    </style>
+</head>
+<body>
+    <h1>Imágenes Subidas</h1>
+
+    <div class="gallery">
+        {% if images %}
+            {% for image in images %}
+            <img src="{{ image }}" alt="Imagen {{ loop.index }}">
+            {% endfor %}
+        {% else %}
+            <p>No hay imágenes disponibles.</p>
+        {% endif %}
+    </div>
+</body>
