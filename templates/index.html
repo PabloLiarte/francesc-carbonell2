@@ -256,37 +256,36 @@
          "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-17.jpg",
          "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46.jpg"  
         ];
-
         let currentImageIndex = 0;
 
-function openCarousel(index) {
-    currentImageIndex = index;
-    const carousel = document.getElementById('carousel');
-    const carouselImage = document.getElementById('carouselImage');
-    carouselImage.src = images[currentImageIndex];
-    carousel.style.display = 'flex';
-}
-
-function closeCarousel() {
-    const carousel = document.getElementById('carousel');
-    carousel.style.display = 'none';
-}
-
-document.addEventListener('keydown', function(event) {
-    const carousel = document.getElementById('carousel');
-    if (carousel.style.display === 'flex') {
-        if (event.key === 'ArrowRight') {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-        } else if (event.key === 'ArrowLeft') {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        } else if (event.key === 'Escape') {
-            closeCarousel();
-            return;
+        function openCarousel(index) {
+            currentImageIndex = index;
+            const carousel = document.getElementById('carousel');
+            const carouselImage = document.getElementById('carouselImage');
+            carouselImage.src = images[currentImageIndex];
+            carousel.style.display = 'flex';
         }
-        const carouselImage = document.getElementById('carouselImage');
-        carouselImage.src = images[currentImageIndex];
-    }
-});
-</script>
+
+        function closeCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.display = 'none';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            const carousel = document.getElementById('carousel');
+            if (carousel.style.display === 'flex') {
+                if (event.key === 'ArrowRight') {
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                } else if (event.key === 'ArrowLeft') {
+                    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                } else if (event.key === 'Escape') {
+                    closeCarousel();
+                    return;
+                }
+                const carouselImage = document.getElementById('carouselImage');
+                carouselImage.src = images[currentImageIndex];
+            }
+        });
+    </script>
 </body>
 </html>
