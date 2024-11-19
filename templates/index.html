@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anuncio del Piso</title>
     <style>
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #FFFFFF; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; padding: 0; overflow-x: hidden; background-color: #FFFFFF; }
         header {
             background: #FFFFFF;
             color: #000000;
@@ -168,12 +168,14 @@
              margin: 0 auto;
             }
              header .phone {
+             display: none;
              margin-top: 10px;
             }
              .container {
              padding: 0 10px;
             }
              .gallery {
+             width: 100%;
              flex-direction: column;
              gap: 10px;
             }
@@ -226,10 +228,10 @@
     <div class="container">
         <!-- Título del piso -->
         <div class="section title" style="text-align: left; width: 150%; margin: 0px 0px; padding-left: 1%;">
-            <h1 style="font-size: 33px; font-family: 'Inter', sans-serif; color: #182039;">Piso en venta en la calle Reina Cristina, Pacífico</h1>
+            <h1 style="font-size: 33px; font-family: 'Inter', sans-serif; color: #182039; word-wrap: break-word; overflow-wrap: break-word;">Piso en venta en la calle Reina Cristina, Pacífico</h1>
         </div>
         <!-- Galería -->
-        <div class="section gallery" style="width: 100%; max-width: 1600px; margin: 0px auto; display: flex; gap: 20px;">
+        <div class="section gallery" style="width: 100%; max-width: 1600px; margin: 0px auto; display: flex; gap: 10px;">
             <div style="flex: 1;">
                 <img src="/static/uploads/portada.jpg" alt="Portada" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(0)">
             </div>
