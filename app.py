@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
-from werkzeug.utils import secure_filename
+from shutil import copyfile
 
 app = Flask(__name__)
 
@@ -13,13 +13,7 @@ app.secret_key = 'your_secret_key'  # Cambia esto por una clave segura
 
 @app.route('/')
 def index():
-    image_files = os.listdir(os.path.join(app.static_folder, 'uploads'))
-    image_files.sort()  # Opcional: ordenar los archivos
-    image_urls = [
-        url_for('static', filename=f'uploads/{filename}')
-        for filename in image_files if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))
-    ]
-    return render_template('index.html', images=image_urls)
+    return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
