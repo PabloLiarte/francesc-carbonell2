@@ -109,6 +109,18 @@
          padding: 0;
          list-style: none;
          }
+         .features-list {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+         gap: 10px; /* Espaciado entre elementos */
+         list-style-type: disc; /* Marcador con punto */
+          padding-left: 20px; /* Espaciado inicial para los puntos */
+         margin: 0;
+        }
+
+         .features-list li {
+         margin-left: 10px; /* Espaciado entre el punto y el texto */
+        }
         .contact-container {
             flex: 3;
             padding: 1rem;
@@ -232,7 +244,7 @@
     <div class="container">
         <!-- Título del piso -->
         <div class="section title" style="text-align: left; width: 150%; margin: 0px 0px; padding-left: 1%;">
-            <h1 style="font-size: 33px; font-family: 'Inter', sans-serif; color: #182039; word-wrap: break-word; overflow-wrap: break-word;">Piso en venta en la calle Reina Cristina, Pacífico</h1>
+            <h1 style="font-size: 33px; font-family: 'Inter', sans-serif; color: #182039; word-wrap: break-word; overflow-wrap: break-word;">Piso en venta en calle de Francesc Carbonell</h1>
         </div>
         <!-- Galería -->
         <div class="section gallery" style="width: 100%; max-width: 1600px; margin: 0px auto; display: flex; gap: 10px;">
@@ -240,10 +252,10 @@
                 <img src="/static/uploads/portada.jpg" alt="Portada" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(0)">
             </div>
             <div style="flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-                <img src="/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-2.jpg" alt="Galería 1" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(1)">
-                <img src="/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-3.jpg" alt="Galería 2" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(2)">
-                <img src="/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-4.jpg" alt="Galería 3" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(3)">
-                <img src="/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-5.jpg" alt="Galería 4" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(4)">
+                <img src="/static/uploads/entrada_plano.jpg" alt="Galería 1" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(1)">
+                <img src="/static/uploads/hab11_plano.jpg" alt="Galería 2" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(2)">
+                <img src="/static/uploads/comedor_plano.jpg" alt="Galería 3" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(3)">
+                <img src="/static/uploads/cocina_plano.jpg" alt="Galería 4" style="width: 100%; height: auto; cursor: pointer;" onclick="openCarousel(4)">
             </div>
         </div>
 
@@ -251,46 +263,58 @@
         <div class="description-form-container">
             <!-- Descripción -->
             <div class="description">
-                <h2>Oportunidad única junto al parque del  Retiro</h2>
-                <p>Piso de 214 m<sup>2</sup> a precio muy competitivo (860.000 Eur). Dispone de 5 habitaciones y 2 baños en muy buen estado de conservación.</p>
-                <p>Su ubicación estratégica en la mejor zona del Pacífico y su precio excepcional por debajo de mercado lo convierten en una excelente inversión.</p>
-                <h2>¿Por qué comprar este piso?</h2>
-                <p><strong>El precio:</strong> Este piso cuenta con una valoración superior al precio de venta, incluso sin tener en cuenta su estado de conservación y el potencial de segregación, que incrementa significativamente su valor. En la zona no se encuentran propiedades similares a un coste de 4.000 €/m², lo que convierte esta oportunidad en una auténtica rareza.</p>
-                <p><strong>Distribución óptima:</strong> Perfecta tanto para inversores como para familias numerosas que busquen versatilidad y funcionalidad en los espacios. (Más detalles en el apartado de "Perfiles").</p>
-                <p><strong>Posible segregación:</strong> Existe la opción de dividir la propiedad en dos viviendas independientes: una de 2 dormitorios y otra de 3 dormitorios. Ya se ha realizado una segregación similar en otro piso del edificio, y los estatutos comunitarios no prohíben esta práctica. Aunque sería necesario verificar los requisitos arquitectónicos para vender como dos unidades independientes, el alquiler de ambas partes es perfectamente viable. Las reformas necesarias son mínimas:</p>
-                <ul>
-                    <li>Adaptar el salón comedor para instalar una cocina en uno de los pisos.</li>
-                    <li>Incorporar un plato de ducha en el aseo del lado derecho.</li>
-                </ul>
-                <p><strong>Finca muy bien conservada:</strong> Construcción de gran calidad con materiales nobles como suelos de madera y armarios empotrados de alta calidad. A pesar de su antigüedad, el estado del piso permite entrar a vivir sin necesidad de reformas inmediatas.</p>
-                <p><strong>Piso fresco y agradable:</strong> Gracias a su orientación, no es necesario instalar aire acondicionado, ya que las temperaturas en verano son confortables. Aunque los propietarios adquirieron un equipo móvil para los días más calurosos, casi no han llegado a utilizarlo.</p>
-                <p><strong>Portería cuidada y funcional:</strong> Un espacio digno y en perfecto estado, con ascensores antiguos que añaden carácter a la finca. Dos escaleras independientes, cada una con su ascensor, facilitan la circulación y son una ventaja si se decide dividir el piso en dos viviendas.</p>
-                <h2>Ubicación excepcional</h2>
-                <p>A tan solo 50 metros del Parque del Retiro y a 300 metros de la estación del AVE. Excelentes conexiones de transporte con dos estaciones de metro muy cercanas y entre 7 y 8 líneas de autobús en los alrededores. En una zona tranquila y segura, sin problemas de ruido ni saturación. Se encuentra en el barrio Pacífico pero está justo en el límite con Retiro y Embajadores, dos de los barrios más cotizados de Madrid. Esto permite disfrutar de lo mejor de ambos mundos: proximidad a zonas exclusivas sin precios elevados.</p>
-                <h2>Vecindario y comunidad</h2>
-                <p>Todos los vecinos son propietarios y la comunidad no ha registrado ningún impago. Zona tranquila con una población mayoritariamente adulta y educada. En la finca destacan las buenas relaciones vecinales, con familias y vecinos que crean un ambiente seguro y agradable.</p>
-                <p><strong>Gastos de comunidad bajos:</strong> A pesar de los más de 200 m<sup>2</sup> y la calefacción centralizada incluida en los gastos, la comunidad paga poco más de 200 euros mensuales. Esto se debe, en parte, a los ingresos generados por el alquiler de la antigua vivienda de portería y otros ingresos de la comunidad.</p>
-                <h2>Perfiles ideales para este piso</h2>
-                <p><strong>Familias con hijos pequeños:</strong> Gracias a su distribución versátil, el piso permite incluso la opción de alojar personal interno con total independencia, ofreciendo comodidad y privacidad para las familias. Además, su cercanía al Parque del Retiro lo convierte en un entorno perfecto para el esparcimiento de los más pequeños.</p>
-                <p><strong>Familias con hijos mayores:</strong> Este inmueble es ideal para familias con hijos mayores que busquen una ubicación céntrica, bien comunicada y con espacios amplios que permitan mantener cierta independencia dentro del hogar.</p>
-                <p><strong>Familias con una persona mayor o familiares adultos:</strong> La distribución del piso permite crear dos zonas independientes...</p>
-                <p><strong>Inversores:</strong> Este inmueble ofrece múltiples posibilidades de inversión...</p>
-                <p><strong>Deportistas y amantes del Retiro:</strong> Para quienes valoran vivir junto al emblemático Parque del Retiro, pero sin asumir los elevados precios de otras zonas más exclusivas, este piso es la elección perfecta.</p>
-                <p><strong>Conclusión:</strong> Una propiedad lista para entrar a vivir o para transformar en una inversión estratégica. ¡Llámanos y agenda tu visita!</p>
+                <div class="description">
+                    <h2>RESIDENCIAL muy exclusivo, con RESTAURANTE propio, MASÍA y ZONAS COMUNES ÚNICAS</h2>
+                    <h2>Motivos para comprar este piso</h2>
+                    <p>1- Zonas comunes: existen pocas comunidades en Pedralbes tan cercanas al centro de Barcelona con este nivel de instalaciones y servicios y metros cuadrados de jardines, lo que lo convierte en lugar de RESIDENCIA IDEAL para todo el año.</p>
+                    <p>2- Ubicación: el piso se encuentra en la tranquila calle Francesc Carbonell, en pleno barrio de Pedralbes, una zona en proyección muy cerca del centro que garantiza una inversión segura, y que cuenta además con todos los servicios a mano. Podrás disfrutar de un bajo nivel de ruido, una calidad de aire y un entorno verde, difíciles de igualar.</p>
+                    <p>Esta magnífica vivienda es un PRIMER PISO CON ALTURA DE SEGUNDO, ya que entre el nivel del suelo y la calle se ubican las viviendas de los conserjes, lo que añade un plus de seguridad.</p>
+                    <p>ES MUY LUMINOSO, todo exterior al dar a dos fachadas. Su orientación Sur-Este es privilegiada y se destina al salón-comedor y la habitación principal. Además, desde la vivienda se disfrutan de unas VISTAS EXCELENTES, con total intimidad.</p>
+                
+                    <h2>La vivienda se distribuye actualmente en:</h2>
+                    <p>Un salón comedor exterior con grandes ventanales que tiene acceso a una TERRAZA MUY AMPLIA Y AGRADABLE, CON VISTAS A JARDÍN Y A LA MASÍA, de 29 m².</p>
+                    <p>En origen disponía de chimenea, pudiéndose recuperar. La habitación principal cuenta con baño propio y da a la misma terraza que el salón. Dos habitaciones traseras directamente lindan con el Parque de Santa Amelia, con vistas a zona verde. La cocina, la habitación de servicio, planchero, aseo y una 5ª habitación son también exteriores ya que dan al patio de luces.</p>
+                
+                    <h2>Posibilidades de reforma:</h2>
+                    <p>Hacer un salón comedor/cocina en la zona delantera exterior y dejar una vivienda muy grande para familias numerosas.</p>
+                    <p>GRAN ZONA DE SALÓN/COCINA CON SALIDA A TERRAZA. Unimos la zona de salón/comedor con el dormitorio principal haciendo un gran espacio semi abierto con acceso a la terraza.</p>
+                    <p>SEPARAR EL PISO EN DOS VIVIENDAS (solo físicamente, vivienda de 3 dormitorios y 2 baños y un apartamento con cocina/salón y balcón con puerta de salida independiente al rellano, dormitorio y baño).</p>
+                
+                    <h2>Potenciales compradores:</h2>
+                    <p>Familias grandes con necesidad de despacho o zona de teletrabajo independiente de la casa principal.</p>
+                    <p>Para familiares con necesidades especiales (con hijos, o padres que necesiten una vivienda independiente, pero sin separarse).</p>
+                    <p>Familias numerosas que busquen una gran casa.</p>
+                    <p>La enorme zona comunitaria es el aspecto más destacable de este piso. Tan solo existen dos comunidades en Pedralbes con este nivel de servicios y metros cuadrados ajardinados. Se compone de dos amplias piscinas, una pista de tenis con césped artificial impecable, campo de fútbol sala / baloncesto, parque infantil con diversos juegos (tobogán, columpios...), restaurante de uso exclusivo de la comunidad de propietarios, habitualmente muy concurrido, siendo también una zona de socialización. Un privilegio a disfrutar sin necesidad de salir del recinto que valorarán enormemente tus hijos, que podrás verlos jugar desde tu misma terraza.</p>
+                    <p>Otro aspecto especial a destacar: Con el piso adquiere un porcentaje de la propiedad de la gran Masía que se encuentra, debidamente separada por una valla, dentro de la zona comunitaria. y actualmente se encuentra alquilada, lo que permite reducir considerablemente los gastos de comunidad mensuales.</p>
+                    <p>Dispone de portero físico con vivienda en la misma finca y en cada escalera. En la práctica, ello supone tener la vigilancia de varias personas las 24 horas.</p>
+                    <p>El precio incluye 2 plazas de aparcamiento fijas y una tercera rotativa cada dos años:</p>
+                    <ul>
+                        <li>Una interior en un parking de un tamaño de rampa, viales y plazas que es sin duda de los mejores de la zona, construido hace 15 años.</li>
+                        <li>Una segunda exterior cubierta.</li>
+                        <li>Y una tercera que es rotativa entre los vecinos, uno de cada dos.</li>
+                    </ul>
+                </div>                
 
                 <!-- Características principales -->
                 <div class="features">
-                    <h2>Características principales</h2>
-                     <div class="features-grid"></div>
-                      <div>Superficie: 212 m²</div>
-                      <div>5 Habitaciones</div>
-                      <div>2 Baños</div>
-                      <div>1 Aseo</div>
-                      <div>Planta: 3º Exterior</div>
-                      <div>Orientación: Norte</div>
-                      <div>Calefacción: Gasóleo</div>
-                      <div>Construido en 1947</div>
+                    <h2>Características básicas</h2>
+                    <ul class="features-list">
+                        <li>216 m² construidos, 190 m² útiles</li>
+                        <li>5 habitaciones</li>
+                        <li>4 baños</li>
+                        <li>Terraza y balcón</li>
+                        <li>Plaza de garaje incluida en el precio</li>
+                        <li>Segunda mano/para reformar</li>
+                        <li>Orientación sur, este</li>
+                        <li>Construido en 1965</li>
+                        <li>Calefacción individual: Gas natural</li>
+                        <li>Planta 2ª exterior</li>
+                        <li>Con ascensor</li>
+                        <li>Zonas Verdes</li>
+                        <li>Piscina</li>
+                    </ul>
                 </div>
+                
             </div>
             <!-- Bloque de contacto con precio y formulario -->
             <div class="contact-container">
@@ -322,24 +346,37 @@
     <script>
         const images = [
            "/static/uploads/portada.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-2.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-3.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-4.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-5.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-6.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-7.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-8.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-9.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-10.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-11.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-12.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-13.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-14.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-14-1.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-15.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-16.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46-17.jpg",
-         "/static/uploads/whatsapp-image-2024-11-18-at-12-36-46.jpg"  
+           "/static/uploads/entrada_plano.jpg",
+           "/static/uploads/hab11_plano.jpg",
+           "/static/uploads/comedor_plano.jpg",
+           "/static/uploads/cocina_plano.jpg",
+           "/static/uploads/hab1_plano.jpg",
+         "/static/uploads/hab2_bolitas.jpg",
+         "/static/uploads/hab3_plano.jpg",
+         "/static/uploads/habitacion3_plano.jpg",
+         "/static/uploads/balcon_plano.jpg",
+         "/static/uploads/hab4_plano.jpg",
+         "/static/uploads/terraza.jpg",
+         "/static/uploads/terraza_plano.jpg",
+         "/static/uploads/baño1_plano.jpg",
+         "/static/uploads/bano2_plano.jpg",
+         "/static/uploads/bano3_plano.jpg",
+         "/static/uploads/bano4.jpg",
+         "/static/uploads/bano4_plano.jpg",
+         "/static/uploads/lavadero_plano.jpg",
+         "/static/uploads/piscina1.jpg",
+         "/static/uploads/piscina2.jpg",
+         "/static/uploads/exterior_2.jpg",
+         "/static/uploads/exterior_3.jpg",
+         "/static/uploads/garaje_1.jpg",
+         "/static/uploads/garaje_2.jpg",
+         "/static/uploads/garaje_3.jpg",
+         "/static/uploads/garaje_4.jpg",
+         "/static/uploads/garaje_5.jpg",
+          "/static/uploads/garaje_6.jpg",
+         "/static/uploads/copia_plano.jpg",
+         "/static/uploads/plano_propuesta.jpg",
+         "/static/uploads/reforma_apartamento.jpg",
         ];
         let currentImageIndex = 0;
 
